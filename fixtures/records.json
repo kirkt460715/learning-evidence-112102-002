@@ -1,0 +1,29 @@
+{
+  "dataset": "verification",
+  "records": [
+    {
+      "id": "v-01",
+      "claim": "water changes state at a fixed temperature",
+      "source": "s-01",
+      "excerpt": "temperature depends on pressure",
+      "student_action": "opened-and-compared",
+      "judgement": "qualified"
+    },
+    {
+      "id": "v-02",
+      "claim": "all metals are magnetic",
+      "source": "s-02",
+      "excerpt": "iron and nickel are magnetic",
+      "student_action": "pasted-link",
+      "judgement": "unsupported-generalization"
+    },
+    {
+      "id": "v-03",
+      "claim": "local rainfall increased",
+      "source": "missing",
+      "excerpt": "",
+      "student_action": "not-recorded",
+      "judgement": "unknown"
+    }
+  ]
+}
