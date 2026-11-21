@@ -1,5 +1,5 @@
-# 记录格式
+# 合成课程资料格式
 
-查证记录以 id、claim、source、excerpt、student_action、judgement 表示论断、来源标识、摘录和学生动作。source 为 missing 时没有来源材料。
+课程资料由 claim、source 目录和查证事件组成。claim 可有多个 revision，source 的可用状态与 excerpt-correction 事件分开记录；student-action 描述观察到的行为，not-recorded 不代表未查证。
 
-记录以 UTF-8 JSON 保存，顶层包含 dataset 和 records。每条记录的 id 在文件中唯一。`fixtures/records.json` 中的例子用于说明输入字段和状态取值。
+夹具只包含虚构的课程、任务和学习事件，不含真实学生资料，也不预先给出分析结论。项目当前入口仅检查夹具格式。

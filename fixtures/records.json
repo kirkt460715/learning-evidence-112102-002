@@ -1,29 +1,74 @@
 {
   "dataset": "verification",
+  "catalogs": {
+    "claims": [
+      {
+        "id": "c-1",
+        "text": "regional-rainfall-increased",
+        "revision": "r1"
+      },
+      {
+        "id": "c-1",
+        "text": "regional-rainfall-increased-after-2000",
+        "revision": "r2"
+      }
+    ],
+    "sources": [
+      {
+        "id": "s-1",
+        "retrieved": "2026-09-02",
+        "status": "available"
+      },
+      {
+        "id": "s-2",
+        "retrieved": "2026-09-02",
+        "status": "withdrawn"
+      }
+    ]
+  },
   "records": [
     {
-      "id": "v-01",
-      "claim": "water changes state at a fixed temperature",
-      "source": "s-01",
-      "excerpt": "temperature depends on pressure",
-      "student_action": "opened-and-compared",
-      "judgement": "qualified"
+      "id": "v-1",
+      "kind": "excerpt",
+      "claim": "c-1",
+      "claim_revision": "r1",
+      "source": "s-1",
+      "text": "regional-total-varies-by-period"
     },
     {
-      "id": "v-02",
-      "claim": "all metals are magnetic",
-      "source": "s-02",
-      "excerpt": "iron and nickel are magnetic",
-      "student_action": "pasted-link",
-      "judgement": "unsupported-generalization"
+      "id": "v-2",
+      "kind": "student-action",
+      "claim": "c-1",
+      "learner": "l-1",
+      "opened_source": "s-1",
+      "compared": "two-periods",
+      "revision": "r1"
     },
     {
-      "id": "v-03",
-      "claim": "local rainfall increased",
-      "source": "missing",
-      "excerpt": "",
-      "student_action": "not-recorded",
-      "judgement": "unknown"
+      "id": "v-3",
+      "kind": "student-action",
+      "claim": "c-1",
+      "learner": "l-2",
+      "opened_source": "not-recorded",
+      "compared": "not-recorded",
+      "revision": "r1"
+    },
+    {
+      "id": "v-4",
+      "kind": "excerpt-correction",
+      "claim": "c-1",
+      "source": "s-1",
+      "old_text": "regional-total-varies-by-period",
+      "new_text": "source-table-covers-only-selected-stations",
+      "at": "2026-10-01"
+    },
+    {
+      "id": "v-5",
+      "kind": "course-activity",
+      "course": "earth-science-2",
+      "activity": "source-scope-practice",
+      "learner_group": "g-1",
+      "status": "planned"
     }
   ]
 }
