@@ -15,5 +15,14 @@ class FixtureTests(unittest.TestCase):
         self.assertEqual(len(identifiers), len(set(identifiers)))
         self.assertTrue(all(isinstance(row, dict) for row in data['records']))
 
+    def test_claim_revisions_source_corrections_and_actions_are_available(self):
+        data = json.loads((ROOT / 'fixtures' / 'records.json').read_text(encoding='utf-8'))
+        self.assertEqual({row['revision'] for row in data['catalogs']['claims']}, {'r1', 'r2'})
+        self.assertIn('withdrawn', {row['status'] for row in data['catalogs']['sources']})
+        self.assertTrue(any(row['kind'] == 'excerpt-correction' for row in data['records']))
+        actions = [row for row in data['records'] if row['kind'] == 'student-action']
+        self.assertEqual({row['opened_source'] for row in actions}, {'s-1', 'not-recorded'})
+        self.assertTrue(any(row['kind'] == 'course-activity' for row in data['records']))
+
 if __name__ == '__main__':
     unittest.main()
